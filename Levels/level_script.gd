@@ -58,8 +58,8 @@ func _draw():
 	var point_start = _point_path[0]
 	var point_end = _point_path[len(_point_path) - 1]
 
-	set_cell(point_start.x, point_start.y, 1)
-	set_cell(point_end.x, point_end.y, 2)
+	#set_cell(point_start.x, point_start.y, 1)
+	#set_cell(point_end.x, point_end.y, 2)
 
 	var last_point = map_to_world(Vector2(point_start.x, point_start.y)) + _half_cell_size
 	for index in range(1, len(_point_path)):
