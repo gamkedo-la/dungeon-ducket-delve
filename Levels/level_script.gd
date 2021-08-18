@@ -10,7 +10,7 @@ var level_complete = false
 
 
 # The Tilemap node doesn't have clear bounds so we're defining the map's limits here.
-export(Vector2) var map_size = Vector2.ONE * 64
+export(Vector2) var map_size = Vector2.ONE * 128
 
 # The path start and end variables use setter methods.
 # You can find them at the bottom of the script.
