@@ -56,10 +56,22 @@ func process_player_input():
 		input_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	if input_direction.x == 0:
 		input_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
-		
 	if input_direction != Vector2.ZERO:
 		initial_position = position
 		is_moving = true
+	
+	if Input.is_action_pressed("ui_right"):
+		get_node( "Sprite" ).set_flip_h( false )
+		anim_player.play("move")
+	elif Input.is_action_pressed("ui_left"):
+		get_node( "Sprite" ).set_flip_h( true )
+		anim_player.play("move")
+		
+	# elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up):
+		# anim_player.play("move")
+	else:
+		anim_player.play("idle")
+	
 
 
 func move(delta):	
@@ -107,7 +119,7 @@ func increase_coin_collected_count():
 	print(coins_collected)
 
 func enemy_hit_me(dir):
-	$AnimationPlayer.play("hit")
+	anim_player.play("hit")
 	input_direction = dir
 	initial_position = position
 	is_moving = true
