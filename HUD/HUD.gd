@@ -17,3 +17,4 @@ func _ready():
 func _process(delta):
 	$RichTextLabel.text = String(player.coins_collected) + "/" + String(level.coin_goal)
 	$RichTextLabel2.bbcode_text = "[right]LVL " + String(Global.current_level+1) + "[/right]"; 
+	$Node2D.get_node("TimeLeftText").bbcode_text = str(Global.turns_left)

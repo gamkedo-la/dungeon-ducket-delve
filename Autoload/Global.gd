@@ -4,6 +4,7 @@ var current_scene = null
 var debug_mode = false
 var current_level = 0
 const level_list = ["res://Levels/main.tscn"]
+var turns_left = 50
 
 func _ready():
 	var root = get_tree().get_root()

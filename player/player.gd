@@ -86,7 +86,8 @@ func move(delta):
 			position = initial_position + (TILE_SIZE * input_direction)
 			percent_moved_to_next_tile = 0.0
 			is_moving = false
-			emit_signal("moved")			
+			emit_signal("moved")
+			Global.turns_left -= 1
 			if turns_left > 0:
 				turns_left -= 1
 			else:
