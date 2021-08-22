@@ -70,7 +70,7 @@ func process_player_input():
 	# elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up):
 		# anim_player.play("move")
 	else:
-		anim_player.play("idle")
+		anim_player.play("static")
 	
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player/PlayerSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://player/player.gd" type="Script" id=2]
@@ -80,6 +80,21 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19, 20, 21, 22 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "static"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
@@ -107,6 +122,7 @@ shape = SubResource( 1 )
 anims/hit = SubResource( 2 )
 anims/idle = SubResource( 3 )
 anims/move = SubResource( 4 )
+anims/static = SubResource( 5 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 4, 4 )
