@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://source_files/Mx437_IBM_EGA_8x8.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=2]
 [ext_resource path="res://source_files/ddd_gui_top_bar.png" type="Texture" id=3]
+[ext_resource path="res://time_powerup/ExtraTime.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -44,9 +45,9 @@ __meta__ = {
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 anchor_right = 1.0
-margin_left = 102.0
+margin_left = 40.0
 margin_top = 2.0
-margin_right = 51.0
+margin_right = -11.0
 margin_bottom = 9.0
 grow_horizontal = 0
 rect_scale = Vector2( 0.5, 0.75 )
@@ -61,5 +62,26 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 80, 4 )
+position = Vector2( 80, -4 )
 texture = ExtResource( 3 )
+
+[node name="Node2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 4 )
+
+[node name="TimeLeftText" type="RichTextLabel" parent="Node2D"]
+anchor_right = 1.0
+margin_left = 8.0
+margin_top = -2.0
+margin_right = 56.0
+margin_bottom = 5.0
+grow_horizontal = 0
+rect_scale = Vector2( 0.5, 0.75 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 0.639216, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "25"
+text = "25"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
