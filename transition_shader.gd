@@ -3,9 +3,11 @@ extends CanvasLayer
 signal fade_out_complete
 
 func _ready():
+	$FadeInSFX.play()
 	pass
 	
 func fade_out():
+	$FadeOutSFX.play()
 	$AnimationPlayer.play("fade_out")
 
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://transition_shader.gd" type="Script" id=1]
+[ext_resource path="res://sfx/screen_wipe_in.wav" type="AudioStream" id=2]
+[ext_resource path="res://sfx/screen_wipe_out.wav" type="AudioStream" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -76,5 +78,11 @@ __meta__ = {
 autoplay = "fade_in"
 anims/fade_in = SubResource( 3 )
 anims/fade_out = SubResource( 4 )
+
+[node name="FadeOutSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="FadeInSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
