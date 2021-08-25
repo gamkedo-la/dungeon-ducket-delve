@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://source_files/Mx437_IBM_EGA_8x8.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=2]
 [ext_resource path="res://source_files/ddd_gui_top_bar.png" type="Texture" id=3]
 [ext_resource path="res://time_powerup/ExtraTime.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source_files/shiny-fx.png" type="Texture" id=5]
+[ext_resource path="res://Intro/IntroGUI.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -119,3 +120,9 @@ texture = ExtResource( 5 )
 
 [node name="LogoSprite" type="Sprite" parent="Logo"]
 texture = ExtResource( 3 )
+
+[node name="IntroGUI" parent="." instance=ExtResource( 6 )]
+margin_left = 13.8319
+margin_top = 54.4774
+margin_right = 13.8319
+margin_bottom = 54.4774
