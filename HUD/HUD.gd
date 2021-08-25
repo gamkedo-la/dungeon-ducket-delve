@@ -13,7 +13,7 @@ func _ready():
 		
 	level = tree.current_scene.get_node("TileMap")
 	
-	logoposition = 12 # start with logo further down
+	logoposition = 10 # start with logo further down
 	print(level)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +22,8 @@ func _process(delta):
 	$RichTextLabel2.bbcode_text = "[center]Level " + String(Global.current_level+1) + "[/center]"; 
 	$Node2D.get_node("TimeLeftText").bbcode_text = str(Global.turns_left)
 	
+	# fun little animation on the scoreboard in the first few frames
 	if logoposition > -16: # float upwards until offscreen
 		logoposition -= 0.05
 		$Logo.position.y = min(4,logoposition) # so it waits a bit
+		$Logo/LogoShinyFX.position.x += 3 # a shine that slides sideways

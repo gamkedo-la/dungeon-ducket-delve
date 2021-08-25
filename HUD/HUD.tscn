@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://source_files/Mx437_IBM_EGA_8x8.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=2]
 [ext_resource path="res://source_files/ddd_gui_top_bar.png" type="Texture" id=3]
 [ext_resource path="res://time_powerup/ExtraTime.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source_files/shiny-fx.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -101,7 +102,7 @@ __meta__ = {
 [node name="Logo" type="Node2D" parent="."]
 position = Vector2( 80, -4 )
 
-[node name="Logo BG" type="ColorRect" parent="Logo"]
+[node name="LogoBG" type="ColorRect" parent="Logo"]
 margin_left = -80.0
 margin_top = -4.0
 margin_right = 80.0
@@ -111,5 +112,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Logo Sprite" type="Sprite" parent="Logo"]
+[node name="LogoShinyFX" type="Sprite" parent="Logo"]
+position = Vector2( -144, 0 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="LogoSprite" type="Sprite" parent="Logo"]
 texture = ExtResource( 3 )
