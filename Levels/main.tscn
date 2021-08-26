@@ -322,7 +322,7 @@ coin_goal = 50
 
 [node name="Timer" type="Timer" parent="TileMap"]
 
-[node name="Ducket Group" type="Node" parent="."]
+[node name="Ducket Group" type="Node2D" parent="."]
 
 [node name="Ducket" parent="Ducket Group" instance=ExtResource( 9 )]
 position = Vector2( 64, 59.0179 )
