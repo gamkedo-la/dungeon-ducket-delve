@@ -26,7 +26,7 @@ func _process(_delta):
 	if frame % frameskip == 0:
 		$IntroTXT.visible_characters += 1
 		
-	if skipped || $IntroTXT.visible_characters > $IntroTXT.text.length() + 20:
+	if skipped || $IntroTXT.visible_characters > $IntroTXT.text.length() + 40:
 		hide()
 		#$IntroGUI.hide() # stop displaying now
 		#$IntroGUI.queue_free() # destroy it from the scene - FIXME: crashes

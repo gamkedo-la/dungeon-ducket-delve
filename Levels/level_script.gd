@@ -38,12 +38,17 @@ func _ready():
 		
 	transition_layer = tree.current_scene.get_node("TransitionLayer")
 	transition_layer.connect("fade_out_complete", self, "switch_scenes")
+	
+	Global.turns_left = 50
 		
 func _process(delta):
 	if player.coins_collected >= coin_goal:
 		if !level_complete:
 			$Timer.start(2)
 		level_complete = true
+	
+	if Global.turns_left <= 0:
+		Global.goto_scene("res://GameOverScreen.tscn")
 		
 		
 		
