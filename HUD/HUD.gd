@@ -17,7 +17,7 @@ func _ready():
 	print(level)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$RichTextLabel.text = String(player.coins_collected) + "/" + String(level.coin_goal)
 	$RichTextLabel2.bbcode_text = "[center]Level " + String(Global.current_level+1) + "[/center]"; 
 	$Node2D.get_node("TimeLeftText").bbcode_text = str(Global.turns_left)
