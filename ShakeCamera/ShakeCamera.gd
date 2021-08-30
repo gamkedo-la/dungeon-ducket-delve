@@ -3,6 +3,7 @@ class_name ShakeCamera
 
 var shake = 0.0
 var shake_power = 2
+var player = null
 export var decay = 0.8
 export var max_offset = Vector2(8, 4)
 export var max_roll = 0.1
@@ -18,7 +19,7 @@ func _ready():
 		x.connect("hit_player", self, "add_shake")
 	
 	if tree.has_group("Player"):
-		$"../Player".connect("hit_enemy", self, "add_shake")
+		get_parent().connect("hit_enemy", self, "add_shake")
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_9):

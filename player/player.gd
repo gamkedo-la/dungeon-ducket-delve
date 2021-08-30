@@ -62,15 +62,16 @@ func process_player_input():
 	
 	if Input.is_action_pressed("ui_right"):
 		get_node( "Sprite" ).set_flip_h( false )
-		anim_player.play("move")
+		#anim_player.play("move")
 	elif Input.is_action_pressed("ui_left"):
 		get_node( "Sprite" ).set_flip_h( true )
-		anim_player.play("move")
+		#anim_player.play("move")
 		
 	# elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up):
 		# anim_player.play("move")
 	else:
-		anim_player.play("static")
+		pass
+		#anim_player.play("static")
 	
 
 
@@ -105,6 +106,7 @@ func move(delta):
 		if ray.get_collider().is_in_group("Chest"):
 			emit_signal("bumped_chest",ray.get_collider().name, input_direction)
 		elif ray.get_collider().is_in_group("Enemy"):
+			get_parent().get_node("ShakeCamera").add_shake()
 			emit_signal("hit_enemy",ray.get_collider().name, input_direction)
 		elif ray.get_collider().is_in_group("NPC"):
 			emit_signal("bumped_npc")
