@@ -39,7 +39,7 @@ func _ready():
 		x.connect("hit_player", self, "enemy_hit_me")
 	
 	initial_position = position
-	anim_player.play("idle")
+	anim_player.play("static")
 	
 
 func _physics_process(delta):
@@ -62,10 +62,10 @@ func process_player_input():
 	
 	if Input.is_action_pressed("ui_right"):
 		get_node( "Sprite" ).set_flip_h( false )
-		#anim_player.play("move")
+		anim_player.play("move")
 	elif Input.is_action_pressed("ui_left"):
 		get_node( "Sprite" ).set_flip_h( true )
-		#anim_player.play("move")
+		anim_player.play("move")
 		
 	# elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up):
 		# anim_player.play("move")
@@ -88,13 +88,15 @@ func move(delta):
 			percent_moved_to_next_tile = 0.0
 			is_moving = false
 			emit_signal("moved")
+			$AnimationPlayer2.play("idle")
+			
 			Global.turns_left -= 1
 			if turns_left > 0:
 				turns_left -= 1
 			else:
 				turns_left = 1
 				emit_signal("turn_over")
-				anim_player.play("idle")			
+							
 			
 		else:
 			position = initial_position + (TILE_SIZE * input_direction * percent_moved_to_next_tile)
@@ -128,3 +130,11 @@ func enemy_hit_me(dir):
 	is_moving = true
 	turns_left += 1
 	coins_collected = 0
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "idle":
+		anim_player.play("move")
+	if anim_name == "move":
+		anim_player.play("static")
+	pass # Replace with function body.
