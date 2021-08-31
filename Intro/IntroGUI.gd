@@ -1,5 +1,7 @@
 extends Control
 
+#Test Commit - Hello gitbot!
+
 # why three quotes? they let you have multi-line strings in code
 var INTROS = [
 
