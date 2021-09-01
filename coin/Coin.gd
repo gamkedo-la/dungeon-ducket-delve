@@ -6,5 +6,5 @@ func _ready():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	queue_free()
+	get_parent().queue_free()
 	pass # Replace with function body.

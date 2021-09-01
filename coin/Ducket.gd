@@ -22,7 +22,7 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		body.increase_coin_collected_count()
 		spawn_coin()
-		queue_free()
+		#hide()
 
 func spawn_coin():
 	var coin_instance = coin.instance() # Create & Spawn Coin Instance
