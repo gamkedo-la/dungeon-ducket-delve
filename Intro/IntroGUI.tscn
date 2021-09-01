@@ -16,12 +16,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="IntroBG2" type="ColorRect" parent="."]
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 141.0
+margin_bottom = 59.0
+color = Color( 0.376471, 0.301961, 0.227451, 0.831373 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="IntroBG" type="ColorRect" parent="."]
 margin_left = -7.0
 margin_top = -7.0
 margin_right = 139.0
 margin_bottom = 57.0
-color = Color( 0, 0, 0, 0.831373 )
+color = Color( 0.117647, 0.113725, 0.109804, 0.831373 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -34,24 +44,9 @@ margin_bottom = 101.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 1, 0.639216, 0, 1 )
-bbcode_text = "Welcome to the dungeon!
-We've got turn-based fun.
-You can have any duckets you find
-but you'd better stay on the run!
+text = "Intro Text Goes Here
 
-It's a very lethal place!
-Grabbing coins is not a crime!
-Kick that chest and grab your loot
-before you run out of time!"
-text = "Welcome to the dungeon!
-We've got turn-based fun.
-You can have any duckets you find
-but you'd better stay on the run!
-
-It's a very lethal place!
-Grabbing coins is not a crime!
-Kick that chest and grab your loot
-before you run out of time!"
+Edit the array at the top of IntroGUI.gd to add new intros!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

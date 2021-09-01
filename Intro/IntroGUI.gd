@@ -62,8 +62,8 @@ func _process(_delta):
 		skipped = false
 		lastIntroducedLevel = Global.current_level
 		print("starting INTRO TEXT for level "+str(lastIntroducedLevel))
-		print($IntroTXT.text)
 		$IntroTXT.text = INTROS[lastIntroducedLevel % INTROS.size()]
+		print($IntroTXT.text)
 		$IntroTXT.visible_characters = 0
 
 	frame += 1
