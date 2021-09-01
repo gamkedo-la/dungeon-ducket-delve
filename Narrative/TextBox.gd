@@ -5,6 +5,10 @@ var content_to_display = []
 
 func _ready():
 	display_text_box(greet_content)
+	
+func _process(delta):
+	if Input.is_action_pressed("ui_cancel"):
+		queue_free()
 
 func display_text_box(content):
 	content_to_display = Narrative.GetContent(content)
