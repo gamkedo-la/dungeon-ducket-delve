@@ -17,25 +17,25 @@ Kick that chest and grab your loot
 before you run out of time!""",
 
 # level 2
-"""Dungeon Level Two Intro""",
+"""Dungeon Level Two""",
 
 # level 3
-"""Dungeon Level Three Intro""",
+"""Dungeon Level Three""",
 
 # level 4
-"""Dungeon Level Four Intro""",
+"""Dungeon Level Four""",
 
 # level 5
-"""Dungeon Level Five Intro""",
+"""Dungeon Level Five""",
 
 # level 6
-"""Dungeon Level Six Intro""",
+"""Dungeon Level Six""",
 
 # level 7
-"""Dungeon Level Seven Intro""",
+"""Dungeon Level Seven""",
 
 # level 8
-"""Dungeon Level Eight Intro"""]
+"""Dungeon Level Eight"""]
 
 
 var frameskip = 3
