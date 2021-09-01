@@ -9,6 +9,7 @@ const YES_OUTCOME = 5
 const NO_ANSWER = 6
 const NO_RESPONSE = 7
 const NO_OUTCOME = 8
+const DONE_TEXT = 9
 
 var story_variables = [""]
 

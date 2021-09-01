@@ -1,3 +1,4 @@
-Condition,Importance,Content,Yes_Answer,Yes_Response,Yes_Outcome,No_Answer,No_Response,No_Outcome
-,2,How's it going?,Good,Great,,Bad,Uh oh,
-,2,What it do?,Not much,Cool,,You know,I do,
+Condition,Importance,Content,Yes_Answer,Yes_Response,Yes_Outcome,No_Answer,No_Response,No_Outcome,Done_Text
+,2,How's it going?,Good,Great,,Bad,Uh oh,,Bye!
+,2,What it do?,Not much,Cool,,You know,I do,,Later!
+,2,I wish I had more duckets.,Me too!,Well you can't have any of mine.,,Why?,None of your business!,,Fine.

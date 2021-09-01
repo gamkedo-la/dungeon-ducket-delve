@@ -19,11 +19,17 @@ func display_text_box(content):
 
 func _on_YesOption_pressed():
 	$YesOption.visible = false
-	$NoOption.visible = false
+	$Done.text = content_to_display[Narrative.DONE_TEXT]
+	$Done.visible = true
 	$Content.text = content_to_display[Narrative.YES_RESPONSE]
 	
 func _on_NoOption_pressed():
 	$YesOption.visible = false
 	$NoOption.visible = false
+	$Done.text = content_to_display[Narrative.DONE_TEXT]
+	$Done.visible = true
 	$Content.text = content_to_display[Narrative.NO_RESPONSE]
+
+func _on_Done_pressed():
+	queue_free()
 
