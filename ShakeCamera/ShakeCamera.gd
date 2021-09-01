@@ -11,6 +11,7 @@ export (NodePath) var target
 
 
 func _ready():
+	yield(get_tree(), "idle_frame")
 	var tree = get_tree()
 	randomize()
 	

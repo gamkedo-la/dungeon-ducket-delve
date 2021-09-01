@@ -3,17 +3,27 @@ extends Node
 var current_scene = null
 var debug_mode = false
 var current_level = 0
-const level_list = ["res://Levels/main.tscn"]
+const level_list = ["res://Levels/main.tscn", "res://Levels/Level 2.tscn"]
 var turns_left = 50
 
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
-	
+
+func goto_next_level():
+	if level_list.size()-1 > current_level:
+		current_level += 1
+		goto_scene(level_list[current_level])
+	else:
+		print_debug("Global.gd: you win; what do?")
+
+
 func goto_scene(path):
 	# Defer the load until the current scene is done executing code
-	print("Getting to goto_scene...")
-	call_deferred("_deferred_goto_scene", path)
+	print_debug("Getting to goto_scene " + path)
+	get_tree().change_scene(path)
+#	call_deferred("_deferred_goto_scene", path)
+
 
 # A function to simplify reparenting nodes, a function that will likely happen a lot as we design things "Modularly"
 func reparent(child: Node, new_parent: Node):
