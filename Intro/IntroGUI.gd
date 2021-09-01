@@ -46,6 +46,7 @@ var lastIntroducedLevel = -1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$IntroTXT.visible_characters = 0
+	show()
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -65,6 +66,7 @@ func _process(_delta):
 		$IntroTXT.text = INTROS[lastIntroducedLevel % INTROS.size()]
 		print($IntroTXT.text)
 		$IntroTXT.visible_characters = 0
+		show()
 
 	frame += 1
 	
