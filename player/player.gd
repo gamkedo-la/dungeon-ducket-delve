@@ -12,7 +12,7 @@ var percent_moved_to_next_tile = 0.0
 var coins_collected = 0
 var chests = []
 var enemies = []
-var turns_left = 1
+var level_tilemap
 
 onready var anim_player = $AnimationPlayer
 onready var ray = $RayCast2D
@@ -40,6 +40,9 @@ func _ready():
 	
 	initial_position = position
 	anim_player.play("static")
+	
+	level_tilemap = tree.current_scene.get_node("TileMap")
+	print(level_tilemap.turns_left)
 	
 
 func _physics_process(delta):
@@ -91,10 +94,10 @@ func move(delta):
 			$AnimationPlayer2.play("idle")
 			
 			Global.turns_left -= 1
-			if turns_left > 0:
-				turns_left -= 1
+			if level_tilemap.turns_left > 0:
+				level_tilemap.turns_left -= 1
 			else:
-				turns_left = 1
+				level_tilemap.turns_left = 1
 				emit_signal("turn_over")
 							
 			
@@ -128,7 +131,7 @@ func enemy_hit_me(dir):
 	input_direction = dir
 	initial_position = position
 	is_moving = true
-	turns_left += 1
+	level_tilemap.turns_left += 1
 	coins_collected = 0
 
 

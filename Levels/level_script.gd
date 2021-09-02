@@ -4,6 +4,7 @@ const BASE_LINE_WIDTH = 0.0
 const DRAW_COLOR = Color.white
 
 export(int) var coin_goal = 5
+export(int) var turns_left = 50
 var player
 var transition_layer
 var level_complete = false
@@ -38,8 +39,6 @@ func _ready():
 		
 	transition_layer = tree.current_scene.get_node("TransitionLayer")
 	transition_layer.connect("fade_out_complete", self, "switch_scenes")
-	
-	Global.turns_left = 50
 		
 func _process(delta):
 	if player.coins_collected >= coin_goal:
@@ -47,7 +46,7 @@ func _process(delta):
 			$Timer.start(2)
 		level_complete = true
 	
-	if Global.turns_left <= 0:
+	if turns_left <= 0:
 		Global.goto_scene("res://GameOverScreen.tscn")
 		
 		

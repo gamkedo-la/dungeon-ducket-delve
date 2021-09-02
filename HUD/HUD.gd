@@ -20,7 +20,7 @@ func _ready():
 func _process(_delta):
 	$RichTextLabel.text = String(player.coins_collected) + "/" + String(level.coin_goal)
 	$RichTextLabel2.bbcode_text = "[center]Level " + String(Global.current_level+1) + "[/center]"; 
-	$Node2D.get_node("TimeLeftText").bbcode_text = str(Global.turns_left)
+	$Node2D.get_node("TimeLeftText").bbcode_text = str(get_parent().get_parent().level_tilemap.turns_left)
 	
 	# fun little animation on the scoreboard in the first few frames
 	if logoposition > -16: # float upwards until offscreen
