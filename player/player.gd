@@ -14,6 +14,8 @@ var chests = []
 var enemies = []
 var level_tilemap
 
+
+
 onready var anim_player = $AnimationPlayer
 onready var ray = $RayCast2D
 
@@ -55,26 +57,27 @@ func _physics_process(delta):
 
 
 func process_player_input():	
-	if input_direction.y == 0:
-		input_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
-	if input_direction.x == 0:
-		input_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
-	if input_direction != Vector2.ZERO:
-		initial_position = position
-		is_moving = true
-	
-	if Input.is_action_pressed("ui_right"):
-		get_node( "Sprite" ).set_flip_h( false )
-		anim_player.play("move")
-	elif Input.is_action_pressed("ui_left"):
-		get_node( "Sprite" ).set_flip_h( true )
-		anim_player.play("move")
+	if not Global.in_conversation_mode:
+		if input_direction.y == 0:
+			input_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+		if input_direction.x == 0:
+			input_direction.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+		if input_direction != Vector2.ZERO:
+			initial_position = position
+			is_moving = true
 		
-	# elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up):
-		# anim_player.play("move")
-	else:
-		pass
-		#anim_player.play("static")
+		if Input.is_action_pressed("ui_right"):
+			get_node( "Sprite" ).set_flip_h( false )
+			anim_player.play("move")
+		elif Input.is_action_pressed("ui_left"):
+			get_node( "Sprite" ).set_flip_h( true )
+			anim_player.play("move")
+			
+		# elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up):
+			# anim_player.play("move")
+		else:
+			pass
+			#anim_player.play("static")
 	
 
 
@@ -93,7 +96,7 @@ func move(delta):
 			emit_signal("moved")
 			$AnimationPlayer2.play("idle")
 			
-			Global.turns_left -= 1
+			#Global.turns_left -= 1
 			if level_tilemap.turns_left > 0:
 				level_tilemap.turns_left -= 1
 			else:

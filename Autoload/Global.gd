@@ -5,6 +5,7 @@ var debug_mode = false
 var current_level = 0
 const level_list = ["res://Levels/TutorialLevel.tscn", "res://Levels/TutorialLevel_2.tscn", "res://Levels/main.tscn", "res://Levels/Level 2.tscn"]
 var turns_left = 50
+var in_conversation_mode = false
 
 func _ready():
 	var root = get_tree().get_root()

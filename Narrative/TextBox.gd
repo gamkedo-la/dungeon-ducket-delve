@@ -4,6 +4,7 @@ var greet_content = Narrative.CSVToArray("res://Narrative/Greet.txt")
 var content_to_display = []
 
 func _ready():
+	Global.in_conversation_mode = true
 	display_text_box(greet_content)
 	
 func _process(delta):
@@ -31,5 +32,6 @@ func _on_NoOption_pressed():
 	$Content.text = content_to_display[Narrative.NO_RESPONSE]
 
 func _on_Done_pressed():
+	Global.in_conversation_mode = false
 	queue_free()
 
