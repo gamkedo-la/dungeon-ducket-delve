@@ -8,6 +8,7 @@ func _ready():
 	
 func fade_out():
 	$FadeOutSFX.play()
+	$AnimationPlayer.current_animation = "fade_out"
 	$AnimationPlayer.play("fade_out")
 
 
