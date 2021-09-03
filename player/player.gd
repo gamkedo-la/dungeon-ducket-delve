@@ -12,6 +12,7 @@ var percent_moved_to_next_tile = 0.0
 var coins_collected = 0
 var chests = []
 var enemies = []
+var turns_left = 1
 var level_tilemap
 
 
@@ -96,11 +97,11 @@ func move(delta):
 			emit_signal("moved")
 			$AnimationPlayer2.play("idle")
 			
-			#Global.turns_left -= 1
-			if level_tilemap.turns_left > 0:
-				level_tilemap.turns_left -= 1
+			level_tilemap.turns_left -= 1
+			if turns_left > 0:
+				turns_left -= 1
 			else:
-				level_tilemap.turns_left = 1
+				turns_left = 1
 				emit_signal("turn_over")
 							
 			
