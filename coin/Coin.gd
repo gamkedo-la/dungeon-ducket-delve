@@ -6,7 +6,7 @@ func _ready():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if get_parent().name != "Chest":
+	if not get_parent().is_in_group("Chest"):
 		get_parent().queue_free()
 	else:
 		queue_free()
