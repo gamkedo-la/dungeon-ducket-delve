@@ -24,6 +24,6 @@ func _process(_delta):
 	
 	# fun little animation on the scoreboard in the first few frames
 	if logoposition > -16: # float upwards until offscreen
-		logoposition -= 0.05
+		logoposition -= 0.1
 		$Logo.position.y = min(4,logoposition) # so it waits a bit
 		$Logo/LogoShinyFX.position.x += 3 # a shine that slides sideways
