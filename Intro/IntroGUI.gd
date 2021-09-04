@@ -17,13 +17,13 @@ Kick that chest and grab your loot
 before you run out of time!""",
 
 # level 2
-"""Smash that Chest!
+"""Our hero awakes in a dungeon.
 
-Our hero awakes in a dungeon
 "How’d I end up here…"
 The hero looks around and a
 voice in their head wonders,
 "but… why a dungeon?.."
+
 They pause, "Nevermind that!
 There are duckets to be found!"
 """,
