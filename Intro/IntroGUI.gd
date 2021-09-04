@@ -80,7 +80,7 @@ then, I guess it’s of no concern.”
 """Dungeon Level Eight"""]
 
 
-var frameskip = 3
+var frameskip = 2
 var frame = 0
 var skipped = false
 var lastIntroducedLevel = -1
