@@ -4,7 +4,7 @@ extends Control
 var INTROS = [
 
 # level 1
-"""Dungeon Level One
+"""Dungeon Ducat Delve
 
 Welcome to the dungeon!
 We've got turn-based fun.
@@ -17,16 +17,58 @@ Kick that chest and grab your loot
 before you run out of time!""",
 
 # level 2
-"""Dungeon Level Two""",
+"""Smash that Chest!
+
+Our hero awakes in a dungeon
+"How’d I end up here…"
+The hero looks around and a
+voice in their head wonders,
+"but… why a dungeon?.."
+They pause, "Nevermind that!
+There are duckets to be found!"
+""",
 
 # level 3
-"""Dungeon Level Three""",
+"""The hero descends to the next
+level of the dungeon. "I need
+to have all of my faculties
+at the ready. It’s like my
+grandmother used to say,
+there’s more than one way
+to skin a ducket…
+or something like that.” 
+""",
+#The voice in their head says, “what does that even mean?”
+#The hero says, “Beats me. I’m not even sure what skinning a ducket would look like”
 
 # level 4
-"""Dungeon Level Four""",
+"""Down another set of stairs the
+hero goes. The voice in their head
+says, "Watch your step. It’s
+important to keep your footing!"
+"Good thinking," says the hero. 
+"Look, if you’re going to keep
+showing up, I’m going to need a
+name for you. Let’s go with Barnabus."
+""",
 
 # level 5
-"""Dungeon Level Five""",
+"""
+"You know, Barnabus, I hadn’t
+considered how we’re going to
+carry all these duckets back up
+these stairs. I wonder if
+encumbrance is tracked somewhere?"
+Barnabus replies, “That’s a
+good point. Here I was thinking
+I was asking the hard questions.
+I wonder what the designers
+think?” The hero attempts to
+make eye contact with you.
+“Just as I suspected. You’re a
+player, not a designer. Well
+then, I guess it’s of no concern.”
+""",
 
 # level 6
 """Dungeon Level Six""",
