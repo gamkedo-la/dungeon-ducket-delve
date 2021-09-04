@@ -16,7 +16,8 @@ func _ready():
 		player.connect("bumped_npc", self, "trigger_dialogue")
 
 func trigger_dialogue():
-	var dialog = dialogue_box.instance() # Create & Spawn Coin Instance
-	player.add_child(dialog)
-	dialog.position -= Vector2(80,40)
+	if not Global.in_conversation_mode:
+		var dialog = dialogue_box.instance() # Create & Spawn Coin Instance
+		player.add_child(dialog)
+		dialog.position -= Vector2(80,40)
 
