@@ -14,13 +14,13 @@ script = ExtResource( 3 )
 [node name="TransitionLayer" parent="." instance=ExtResource( 2 )]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 40.0
-margin_top = 64.0
-margin_right = 128.0
-margin_bottom = 80.0
+margin_left = 8.0
+margin_top = 40.0
+margin_right = 152.0
+margin_bottom = 96.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 1, 0.92549, 0.152941, 1 )
-text = "LEVEL COMPLETE!"
+text = "      LEVEL COMPLETE!"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -8,6 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Global.level_list.size()-1 == Global.current_level:
+		$RichTextLabel.text = "Game Complete! You Win Adventurer!"
 	pass
 
 
