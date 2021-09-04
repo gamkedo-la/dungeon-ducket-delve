@@ -3,7 +3,7 @@ extends Node
 var current_scene = null
 var debug_mode = false
 var current_level = 0
-const level_list = ["res://Levels/TutorialLevel.tscn", "res://Levels/TutorialLevel_2.tscn", "res://Levels/main.tscn", "res://Levels/Level 2.tscn"]
+const level_list = ["res://Levels/TutorialLevel.tscn", "res://Levels/TutorialLevel_2.tscn", "res://Levels/main.tscn", "res://Levels/Level 2.tscn", "res://Levels/Town Level.tscn"]
 var turns_left = 50
 var in_conversation_mode = false
 
