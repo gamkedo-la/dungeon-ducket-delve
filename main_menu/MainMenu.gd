@@ -2,7 +2,7 @@ extends Node2D
 
 onready var transition_layer = $TransitionLayer
 onready var credits_text = $CreditsText
-onready var non_credits = $CreditsTip
+onready var non_credits = $HideForCredits
 
 onready var tween = Tween.new()
 
@@ -27,7 +27,7 @@ func switch_scenes():
 
 func _toggle_credits():
 	if tween.is_active():
-		tween.stop()
+		tween.stop(credits_text)
 	if credits_text.rect_position.y > 150:		
 		non_credits.set_visible(false)
 		tween.interpolate_property(credits_text, "rect_position:y", 160, 0, 3, Tween.TRANS_EXPO, Tween.EASE_OUT)
