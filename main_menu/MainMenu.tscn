@@ -57,6 +57,8 @@ tracks/0/keys = {
 
 [sub_resource type="DynamicFont" id=7]
 size = 6
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
 
 [node name="MainMenu" type="Node2D"]
@@ -95,10 +97,10 @@ autoplay = "TitleBounce"
 anims/TitleBounce = SubResource( 6 )
 
 [node name="CreditsText" type="RichTextLabel" parent="."]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 156.0
-margin_bottom = 142.0
+margin_left = 2.37791
+margin_top = 0.540695
+margin_right = 157.378
+margin_bottom = 141.541
 custom_fonts/normal_font = SubResource( 7 )
 text = "-Gabriel Cornish: Project lead, core gameplay, enemy AI pathfinding, base HUD, original tileset, level design (including tutorial), turn system, sounds (coin, chest), transition effects, chest destruction, dialog system, palette, assorted bug fixes, timer, game over screen
 -Daniel Song: Sprite animations (player, enemy, princess, old man), tilesets (lava, ice), additional integration support
@@ -112,7 +114,20 @@ text = "-Gabriel Cornish: Project lead, core gameplay, enemy AI pathfinding, bas
 -Randy Tan Shaoxian: Getting stuck bug fix after talking
 -Ben Stone: Mute/unmute functionality
 -Drew Smith \"Nameless\": Additional writing
--Kyle Black: Autoload for scene switching"
+-Kyle Black: Autoload for scene switching
+
+Game developed by members in the HomeTeamGameDev Apollo community"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsTip" type="RichTextLabel" parent="."]
+margin_left = 2.37791
+margin_top = 136.541
+margin_right = 159.378
+margin_bottom = 142.541
+custom_fonts/normal_font = SubResource( 7 )
+text = "Press C to toggle Credits display"
 __meta__ = {
 "_edit_use_anchors_": false
 }

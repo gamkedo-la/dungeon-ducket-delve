@@ -7,14 +7,14 @@ func _ready():
 	var tree = get_tree()
 
 	credits_text = tree.current_scene.get_node("CreditsText")
-	credits_text.hide();
+	credits_text.set_visible(false);
 	transition_layer = tree.current_scene.get_node("TransitionLayer")
 	transition_layer.connect("fade_out_complete", self, "switch_scenes")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("credits"):
-		credits_text.show();
+		credits_text.set_visible(credits_text.is_visible()==false);
 	if Input.is_action_just_pressed("ui_accept"):
 		transition_layer.fade_out()
 #	pass
