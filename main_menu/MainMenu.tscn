@@ -104,16 +104,16 @@ margin_bottom = 141.541
 custom_fonts/normal_font = SubResource( 7 )
 text = "-Gabriel Cornish: Project lead, core gameplay, enemy AI pathfinding, base HUD, original tileset, level design (including tutorial), turn system, sounds (coin, chest), transition effects, chest destruction, dialog system, palette, assorted bug fixes, timer, game over screen
 -Daniel Song: Sprite animations (player, enemy, princess, old man), tilesets (lava, ice), additional integration support
--Christer \"McFunkypants\" Kaitila: Pixelart logo, title particle effects, tiles (stone floor, grass), crisp sprite edges, level number, new font, header animation, intro GUI, narrative setup
--Tyler Funk: Player footsteps sounds, start accept dialog, extra time sprite, camera shake
+-Christer \"McFunkypants\" Kaitila: Pixelart logo, title particle effects, tiles (stone floor, grass), crisp sprite edges, level number, new font, header animation, intro GUI, narrative setup, town level
+-Tyler Funk: Player footsteps sounds, start accept dialog, extra time sprite, camera shake, dialog box improvements
 -Michael \"Misha\" Fewkes: Music
 -Nic Barkdull: Level 2 design, testing feedback
+-Drew Smith \"Nameless\": Intro and additional writing
 -Jessica Dominguez: Dungeon tiles
 -Charlene A.: Walking animation sprite flip, static idle animation improvement, shake bug fix
 -Rob Tunstall: Screen wipe sound
 -Randy Tan Shaoxian: Getting stuck bug fix after talking
 -Ben Stone: Mute/unmute functionality
--Drew Smith \"Nameless\": Additional writing
 -Kyle Black: Autoload for scene switching
 
 Game developed by members in the HomeTeamGameDev Apollo community"
