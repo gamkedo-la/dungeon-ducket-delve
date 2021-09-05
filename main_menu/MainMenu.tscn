@@ -8,7 +8,7 @@
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://source_files/floor.png" type="Texture" id=7]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -24,16 +24,16 @@ tracks/0/keys = {
 "values": [ Vector2( -48, 64 ), Vector2( -48, 80 ), Vector2( -48, 64 ), Vector2( -48, 48 ), Vector2( -48, 64 ) ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=2]
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0.00775194, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 2
 emission_box_extents = Vector3( 128, 1, 1 )
 flag_disable_z = true
@@ -41,9 +41,9 @@ gravity = Vector3( 0, 98, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.1
-color_ramp = SubResource( 3 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 2
 emission_box_extents = Vector3( 1, 100, 1 )
 flag_disable_z = true
@@ -72,24 +72,24 @@ texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "TitleBounce"
-anims/TitleBounce = SubResource( 6 )
+anims/TitleBounce = SubResource( 1 )
 
 [node name="HideForCredits" type="Node2D" parent="."]
 
 [node name="Raining Duckets" type="Particles2D" parent="HideForCredits"]
-material = SubResource( 1 )
+material = SubResource( 2 )
 position = Vector2( 80.2339, -4.30299 )
 amount = 256
 lifetime = 2.0
-process_material = SubResource( 4 )
+process_material = SubResource( 5 )
 texture = ExtResource( 4 )
 
 [node name="Bouncing Chests" type="Particles2D" parent="HideForCredits"]
-material = SubResource( 1 )
+material = SubResource( 2 )
 position = Vector2( 78.818, 152.852 )
 rotation = -1.5708
 amount = 16
-process_material = SubResource( 5 )
+process_material = SubResource( 6 )
 texture = ExtResource( 5 )
 
 [node name="logo" type="Sprite" parent="HideForCredits"]
@@ -110,10 +110,10 @@ __meta__ = {
 }
 
 [node name="CreditsText" type="RichTextLabel" parent="."]
-margin_left = 2.37791
-margin_top = 0.540695
+margin_left = 2.378
+margin_top = 160.0
 margin_right = 157.378
-margin_bottom = 141.541
+margin_bottom = 301.0
 custom_fonts/normal_font = SubResource( 7 )
 text = "-Gabriel Cornish: Project lead, core gameplay, enemy AI pathfinding, base HUD, original tileset, level design (including tutorial), turn system, sounds (coin, chest), transition effects, chest destruction, dialog system, palette, assorted bug fixes, timer, game over screen
 -Daniel Song: Sprite animations (player, enemy, princess, old man), tilesets (lava, ice), additional integration support
