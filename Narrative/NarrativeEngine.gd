@@ -80,4 +80,5 @@ func CSVToArray(file_path):
 			story_content.append(file.get_csv_line())
 	
 	file.close()
+	print(story_content)
 	return story_content
