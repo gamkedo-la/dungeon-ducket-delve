@@ -10,6 +10,7 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	var tree = get_tree()
 	add_child(tween)
+	_toggle_credits()
 	if not transition_layer.is_connected("fade_out_complete", self, "switch_scenes"):
 		assert(transition_layer.connect("fade_out_complete", self, "switch_scenes")== OK)
 
