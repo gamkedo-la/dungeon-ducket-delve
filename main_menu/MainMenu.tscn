@@ -8,6 +8,22 @@
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://source_files/floor.png" type="Texture" id=7]
 
+[sub_resource type="Animation" id=6]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("HideForCredits/logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -48, 64 ), Vector2( -48, 80 ), Vector2( -48, 64 ), Vector2( -48, 48 ), Vector2( -48, 64 ) ]
+}
+
 [sub_resource type="CanvasItemMaterial" id=1]
 
 [sub_resource type="Gradient" id=2]
@@ -39,22 +55,6 @@ orbit_velocity_random = 0.0
 angle = 90.0
 scale = 0.1
 
-[sub_resource type="Animation" id=6]
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("logo:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -48, 64 ), Vector2( -48, 80 ), Vector2( -48, 64 ), Vector2( -48, 48 ), Vector2( -48, 64 ) ]
-}
-
 [sub_resource type="DynamicFont" id=7]
 size = 6
 outline_size = 1
@@ -70,7 +70,13 @@ texture = ExtResource( 7 )
 
 [node name="TransitionLayer" parent="." instance=ExtResource( 3 )]
 
-[node name="Raining Duckets" type="Particles2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "TitleBounce"
+anims/TitleBounce = SubResource( 6 )
+
+[node name="HideForCredits" type="Node2D" parent="."]
+
+[node name="Raining Duckets" type="Particles2D" parent="HideForCredits"]
 material = SubResource( 1 )
 position = Vector2( 80.2339, -4.30299 )
 amount = 256
@@ -78,7 +84,7 @@ lifetime = 2.0
 process_material = SubResource( 4 )
 texture = ExtResource( 4 )
 
-[node name="Bouncing Chests" type="Particles2D" parent="."]
+[node name="Bouncing Chests" type="Particles2D" parent="HideForCredits"]
 material = SubResource( 1 )
 position = Vector2( 78.818, 152.852 )
 rotation = -1.5708
@@ -86,15 +92,22 @@ amount = 16
 process_material = SubResource( 5 )
 texture = ExtResource( 5 )
 
-[node name="logo" type="Sprite" parent="."]
+[node name="logo" type="Sprite" parent="HideForCredits"]
 position = Vector2( -48, 64 )
 scale = Vector2( 1.6, 1.6 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "TitleBounce"
-anims/TitleBounce = SubResource( 6 )
+[node name="CreditsTip" type="RichTextLabel" parent="."]
+margin_left = 2.37791
+margin_top = 136.541
+margin_right = 159.378
+margin_bottom = 142.541
+custom_fonts/normal_font = SubResource( 7 )
+text = "Press Space to start, C to toggle Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CreditsText" type="RichTextLabel" parent="."]
 margin_left = 2.37791
@@ -117,17 +130,6 @@ text = "-Gabriel Cornish: Project lead, core gameplay, enemy AI pathfinding, bas
 -Kyle Black: Autoload for scene switching
 
 Game developed by members in the HomeTeamGameDev Apollo community"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CreditsTip" type="RichTextLabel" parent="."]
-margin_left = 2.37791
-margin_top = 136.541
-margin_right = 159.378
-margin_bottom = 142.541
-custom_fonts/normal_font = SubResource( 7 )
-text = "Press C to toggle Credits display"
 __meta__ = {
 "_edit_use_anchors_": false
 }
