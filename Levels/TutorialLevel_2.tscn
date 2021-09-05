@@ -19,12 +19,12 @@ tile_data = PoolIntArray( -1245205, 21, 0, -1245204, 21, 0, -1245203, 21, 0, -12
 coin_goal = 10
 turns_left = 10
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 48, 64 )
-
 [node name="Chest" parent="." instance=ExtResource( 5 )]
 position = Vector2( 56, 64 )
 
 [node name="ShakeCamera" parent="." instance=ExtResource( 4 )]
 position = Vector2( 48, 64 )
 target = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 48, 64 )
